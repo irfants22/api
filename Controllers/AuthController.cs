@@ -10,7 +10,7 @@ namespace Api.Controllers
     public class AuthController(IAuthService authService) : ControllerBase
     {
         [HttpPost("login")]
-        public async Task<ActionResult<string?>> LoginAsync(SignInUserDto request)
+        public async Task<ActionResult<string?>> LoginAsync([FromBody] SignInUserDto request)
         {
             var token = await authService.LoginAsync(request);
 
@@ -20,7 +20,7 @@ namespace Api.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<UserDto?>> RegisterAsync(SignUpUserDto request)
+        public async Task<ActionResult<UserDto?>> RegisterAsync([FromBody] SignUpUserDto request)
         {
             var newUser = await authService.RegisterAsync(request);
 

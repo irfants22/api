@@ -1,9 +1,9 @@
-﻿using Api.Models;
+﻿using Api.Common.Dtos.Roles;
 
 namespace Api.Common.Interfaces
 {
     public interface IRoleService
     {
-        Task<List<Role>> GetRolesAsync();
+        Task<IEnumerable<RoleDto>> GetRolesAsync();
     }
 }

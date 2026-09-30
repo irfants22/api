@@ -35,13 +35,15 @@ namespace Api.Services
 
             if (user) return null;
 
+            var memberRole = await context.Roles.FirstOrDefaultAsync(r => r.Name == "member");
+
             var newUser = new User
             {
                 Name = request.Name,
                 Email = request.Email,
                 PasswordHash = new PasswordHasher<User>().HashPassword(new User(), request.Password),
                 IsActive = true,
-                RoleId = request.RoleId
+                RoleId = memberRole!.Id
             };
 
             context.Users.Add(newUser);
