@@ -10,7 +10,7 @@ namespace Api.Controllers
     public class RoleController(IRoleService roleService) : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RoleDto>>> GetRoles()
+        public async Task<ActionResult<IEnumerable<RoleDto>>> GetRolesAsync()
         {
             var roles = await roleService.GetRolesAsync();
             return Ok(roles);

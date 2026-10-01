@@ -19,7 +19,7 @@ namespace Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserDto>> GetUserByIdAsync(int id )
+        public async Task<ActionResult<UserDto>> GetUserByIdAsync(int id)
         {
             var user = await userService.GetUserByIdAsync(id);
             if (user == null) return NotFound("User not found.");

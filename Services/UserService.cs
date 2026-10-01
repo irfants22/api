@@ -26,6 +26,7 @@ namespace Api.Services
                 .Take(queryParams.PageSize)
                 .Select(u => new UserDto
                 {
+                    Id = u.Id,
                     Name = u.Name,
                     Email = u.Email,
                     IsActive = u.IsActive,
@@ -48,6 +49,7 @@ namespace Api.Services
                 .Where(u => u.Id == id)
                 .Select(u => new UserDto
                 {
+                    Id = u.Id,
                     Name = u.Name,
                     Email = u.Email,
                     IsActive = u.IsActive,

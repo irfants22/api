@@ -8,7 +8,7 @@ namespace Api.Services
 {
     public class RoleService(ApplicationDbContext context) : IRoleService
     {
-        public async Task<IEnumerable<RoleDto>> GetRolesAsync()
+        public async Task<IEnumerable<RoleDto?>> GetRolesAsync()
         {
             var roles = await context.Roles
                 .Include(r => r.Users)
@@ -19,6 +19,7 @@ namespace Api.Services
                     Description = r.Description,
                     Users = r.Users.Select(u => new UserDto
                     {
+                        Id = u.Id,
                         Name = u.Name,
                         Email = u.Email,
                         IsActive = u.IsActive,

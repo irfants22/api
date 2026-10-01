@@ -4,6 +4,6 @@ namespace Api.Common.Interfaces
 {
     public interface IRoleService
     {
-        Task<IEnumerable<RoleDto>> GetRolesAsync();
+        Task<IEnumerable<RoleDto?>> GetRolesAsync();
     }
 }
