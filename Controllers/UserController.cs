@@ -12,14 +12,14 @@ namespace Api.Controllers
     public class UserController(IUserService userService) : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDto?>>> GetUsersAsync([FromQuery] QueryParamsDto queryParams)
+        public async Task<ActionResult<IEnumerable<UserDto>>> GetUsersAsync([FromQuery] QueryParamsDto queryParams)
         {
             var users = await userService.GetUsersAsync(queryParams);
             return Ok(users);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserDto?>> GetUserByIdAsync(int id )
+        public async Task<ActionResult<UserDto>> GetUserByIdAsync(int id )
         {
             var user = await userService.GetUserByIdAsync(id);
             if (user == null) return NotFound("User not found.");
