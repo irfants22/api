@@ -9,6 +9,7 @@ namespace Api.Data
         public DbSet<Role> Roles => Set<Role>();
         public DbSet<User> Users => Set<User>();
         public DbSet<Category> Categories => Set<Category>();
+        public DbSet<Priority> Priorities => Set<Priority>();
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
