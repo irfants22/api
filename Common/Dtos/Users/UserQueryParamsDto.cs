@@ -1,6 +1,6 @@
 ﻿namespace Api.Common.Dtos.Users
 {
-    public class QueryParamsDto
+    public class UserQueryParamsDto
     {
         public string? SearchTerm { get; set; }
         public int PageNumber { get; set; } = 1;

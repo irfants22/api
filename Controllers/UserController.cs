@@ -12,7 +12,7 @@ namespace Api.Controllers
     public class UserController(IUserService userService) : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDto>>> GetUsersAsync([FromQuery] QueryParamsDto queryParams)
+        public async Task<ActionResult<IEnumerable<UserDto>>> GetUsersAsync([FromQuery] UserQueryParamsDto queryParams)
         {
             var users = await userService.GetUsersAsync(queryParams);
             return Ok(users);

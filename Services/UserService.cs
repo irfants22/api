@@ -9,7 +9,7 @@ namespace Api.Services
 {
     public class UserService(ApplicationDbContext context) : IUserService
     {
-        public async Task<IEnumerable<UserDto?>> GetUsersAsync(QueryParamsDto queryParams)
+        public async Task<IEnumerable<UserDto?>> GetUsersAsync(UserQueryParamsDto queryParams)
         {
             IQueryable<User> users = context.Users;
 
